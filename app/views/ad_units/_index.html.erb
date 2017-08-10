@@ -1,0 +1,19 @@
+
+<h3>Ad units:</h3>
+<% @account.ad_units.each do |ad_unit| %>
+  <div id="ad_unit_<%= ad_unit.id %>">
+    <b><%= ad_unit.name %> 
+    <div class="<%=class_type(ad_unit.status)%>"> <%= ad_unit_status_info(ad_unit.status)%> </div>
+     
+    </b> 
+      <% unless ad_unit.status == 2 %>
+        <%= link_to 'Delete', [ad_unit.account, ad_unit], method: :delete, data: { confirm: 'Are you sure?' },  class:  "btn btn-danger btn-xs"%>
+    <% end %>
+    <br>
+    <b><%= ad_unit.url %></b>
+    <br>
+   <p class="text-danger"> <%= ad_unit.error_message %>  </p>
+  
+    <br>
+  </div>
+<% end %>

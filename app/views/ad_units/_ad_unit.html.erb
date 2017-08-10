@@ -1,0 +1,8 @@
+<div id="ad_unit_<%= @ad_unit_.id %>">
+  <b><%= @ad_unit_name %></b> 
+  <i><%= @comment.url %></i>
+  <br>
+   <% if ad_unit.status == 0 %>
+       <%= link_to 'Delete', [comment.post, comment], method: :delete, class: "btn btn-danger btn-xs" %>
+   <% end %>
+</div>

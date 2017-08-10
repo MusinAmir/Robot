@@ -1,0 +1,22 @@
+  <div align="center">
+  <h2>Accounts:</h2>
+  <br>
+  <% @accounts.each do |account| %>
+      <div id="account" >
+        <b><%= account.login %> </b> 
+        <p class="text-danger"> <%= account.error_message %> </p>
+        <%= link_to 'Show', account, class: "btn btn-info btn-xs" %>
+        <%= link_to 'Edit', edit_account_path(account), class: "btn btn-success btn-xs" %>
+        <%= link_to 'Delete', account, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+        <% unless (account.status == 2 || account.status ==1) %>
+       <%= link_to 'Synhronize', synhronize_account_path(account), class: "btn btn-info btn-xs" %>
+       <% end %>
+        <br>
+        <div class="<%=class_type(account.status)%>" > <%= account_status_info(account.status)%> </div>
+        <br>
+        <br>
+      </div>
+
+  <% end %>
+
+</div>

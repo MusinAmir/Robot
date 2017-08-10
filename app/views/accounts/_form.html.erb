@@ -1,0 +1,18 @@
+<%= form_with(model: account, local: true) do |form| %>
+<%= render 'shared/error_messages', f: @account %>
+  <div class = 'container'>
+  <div class="field">
+    <%= form.label :login %>
+    <%= form.text_field :login, id: :account_login, size: '40x10' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+
+    <%= form.text_field :password, id: :account_password, size: '40x10' %>
+  </div>
+</div>
+  <div class="actions">
+    <%= form.submit class: "btn btn-success btn-default"%>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<h4>Add ad unit:</h4>
+    <%= form_for [@account, @account.ad_units.build] do |f| %>
+        <div class="field" id = "new_ad_unit_name">
+          <%= f.label :name %>
+          <%= f.text_field :name, size: '40x10' %>
+        </div>  
+        <div class="field" id = "new_ad_unit_url">
+         <%= f.label :url %>
+          <%= f.text_field :url, size: '40x10'%>
+        </div>
+        <div class="actions">
+          <%= f.submit 'Submit', class: "btn btn-success btn-default" %>
+        </div>
+<% end %>
+
+
