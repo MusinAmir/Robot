@@ -1,5 +1,5 @@
 # Robot for https://target.my.com (authorization and ad unit creation)
-#Using Watir, phantomjs, sidekiq, redis	
+# Using Watir, phantomjs, sidekiq, redis	
 To run robot: ruby robot/lib/robot.rb 
 
 ```ruby
